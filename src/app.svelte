@@ -52,6 +52,7 @@
     ul{
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
         gap: 1rem;
         padding: 0;
         margin: 0;

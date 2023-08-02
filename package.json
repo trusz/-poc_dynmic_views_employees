@@ -9,7 +9,8 @@
     "build:watch": "vite build --watch",
     "preview": "concurrently 'npm:build:watch' 'npm:_preview'",
     "_preview": "vite preview",
-    "publish": "gh-pages -d dist"
+    "pages": "gh-pages -d dist",
+    "deploy": "npm run build && npm run pages"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
