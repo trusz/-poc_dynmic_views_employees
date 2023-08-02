@@ -34,7 +34,7 @@
     <h1>Employees</h1>
     
     <ul>
-        {#each employees as employee, index}
+        {#each employees as employee}
             <li>
                 <div>
                     <h4>{employee.name}</h4>
