@@ -1,4 +1,4 @@
-(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.id="hdv_employees",e.appendChild(document.createTextNode(":root{font-family:Inter,system-ui,Avenir,Helvetica,Arial,sans-serif;line-height:1.5;font-weight:400;color-scheme:light dark;color:#ffffffde;background-color:#242424;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%}a{font-weight:500;color:#646cff;text-decoration:inherit}a:hover{color:#535bf2}body{margin:0;display:flex;place-items:center;min-width:320px;min-height:100vh}h1{font-size:3.2em;line-height:1.1}.card{padding:2em}#app{max-width:1280px;margin:0 auto;padding:2rem;text-align:center}button{border-radius:8px;border:1px solid transparent;padding:.6em 1.2em;font-size:1em;font-weight:500;font-family:inherit;background-color:#1a1a1a;cursor:pointer;transition:border-color .25s}button:hover{border-color:#646cff}button:focus,button:focus-visible{outline:4px auto -webkit-focus-ring-color}@media (prefers-color-scheme: light){:root{color:#213547;background-color:#fff}a:hover{color:#747bff}button{background-color:#f9f9f9}}ul.svelte-6fbsmq{list-style:none;display:flex;gap:1rem;padding:0;margin:0}li.svelte-6fbsmq{display:flex;width:15rem;height:12rem;padding:1rem;background-color:#393939;outline:2px solid rgba(0,0,0,0);outline-offset:-2px;gap:2rem;flex-direction:column}")),document.head.appendChild(e)}}catch(o){console.error("vite-plugin-css-injected-by-js",o)}})();
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.id="hdv_employees",e.appendChild(document.createTextNode(":root{font-family:Inter,system-ui,Avenir,Helvetica,Arial,sans-serif;line-height:1.5;font-weight:400;color-scheme:light dark;color:#ffffffde;background-color:#242424;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%}a{font-weight:500;color:#646cff;text-decoration:inherit}a:hover{color:#535bf2}body{margin:0;display:flex;place-items:center;min-width:320px;min-height:100vh}h1{font-size:3.2em;line-height:1.1}.card{padding:2em}#app{max-width:1280px;margin:0 auto;padding:2rem;text-align:center}button{border-radius:8px;border:1px solid transparent;padding:.6em 1.2em;font-size:1em;font-weight:500;font-family:inherit;background-color:#1a1a1a;cursor:pointer;transition:border-color .25s}button:hover{border-color:#646cff}button:focus,button:focus-visible{outline:4px auto -webkit-focus-ring-color}@media (prefers-color-scheme: light){:root{color:#213547;background-color:#fff}a:hover{color:#747bff}button{background-color:#f9f9f9}}ul.svelte-2k5rl{list-style:none;display:flex;flex-wrap:wrap;gap:1rem;padding:0;margin:0}li.svelte-2k5rl{display:flex;width:15rem;height:12rem;padding:1rem;background-color:#393939;outline:2px solid rgba(0,0,0,0);outline-offset:-2px;gap:2rem;flex-direction:column}")),document.head.appendChild(e)}}catch(o){console.error("vite-plugin-css-injected-by-js",o)}})();
 var Le = Object.defineProperty;
 var Se = (e, t, n) => t in e ? Le(e, t, { enumerable: !0, configurable: !0, writable: !0, value: n }) : e[t] = n;
 var Y = (e, t, n) => (Se(e, typeof t != "symbol" ? t + "" : t, n), n);
@@ -18,7 +18,7 @@ function ye(e) {
 function ue() {
   return /* @__PURE__ */ Object.create(null);
 }
-function M(e) {
+function q(e) {
   e.forEach(ye);
 }
 function ke(e) {
@@ -98,11 +98,11 @@ function Ne(e, t) {
 function y(e) {
   return document.createElement(e);
 }
-function J(e) {
+function M(e) {
   return document.createTextNode(e);
 }
 function P() {
-  return J(" ");
+  return M(" ");
 }
 function w(e, t, n, l) {
   return e.addEventListener(t, n, l), () => e.removeEventListener(t, n, l);
@@ -164,16 +164,16 @@ function S(e, t) {
   n && n.slice().forEach((l) => l.call(this, t));
 }
 const U = [], ie = [];
-let q = [];
+let D = [];
 const oe = [], Ue = /* @__PURE__ */ Promise.resolve();
 let se = !1;
-function qe() {
+function De() {
   se || (se = !0, Ue.then(Ee));
 }
 function fe(e) {
-  q.push(e);
+  D.push(e);
 }
-function De(e) {
+function Je(e) {
   oe.push(e);
 }
 const ne = /* @__PURE__ */ new Set();
@@ -186,33 +186,33 @@ function Ee() {
     try {
       for (; R < U.length; ) {
         const t = U[R];
-        R++, x(t), Je(t.$$);
+        R++, x(t), Me(t.$$);
       }
     } catch (t) {
       throw U.length = 0, R = 0, t;
     }
     for (x(null), U.length = 0, R = 0; ie.length; )
       ie.pop()();
-    for (let t = 0; t < q.length; t += 1) {
-      const n = q[t];
+    for (let t = 0; t < D.length; t += 1) {
+      const n = D[t];
       ne.has(n) || (ne.add(n), n());
     }
-    q.length = 0;
+    D.length = 0;
   } while (U.length);
   for (; oe.length; )
     oe.pop()();
   se = !1, ne.clear(), x(e);
 }
-function Je(e) {
+function Me(e) {
   if (e.fragment !== null) {
-    e.update(), M(e.before_update);
+    e.update(), q(e.before_update);
     const t = e.dirty;
     e.dirty = [-1], e.fragment && e.fragment.p(e.ctx, t), e.after_update.forEach(fe);
   }
 }
-function Me(e) {
+function qe(e) {
   const t = [], n = [];
-  q.forEach((l) => e.indexOf(l) === -1 ? t.push(l) : n.push(l)), n.forEach((l) => l()), q = t;
+  D.forEach((l) => e.indexOf(l) === -1 ? t.push(l) : n.push(l)), n.forEach((l) => l()), D = t;
 }
 const W = /* @__PURE__ */ new Set();
 let N;
@@ -225,12 +225,12 @@ function Fe() {
   };
 }
 function Ke() {
-  N.r || M(N.c), N = N.p;
+  N.r || q(N.c), N = N.p;
 }
 function j(e, t) {
   e && e.i && (W.delete(e), e.i(t));
 }
-function D(e, t, n, l) {
+function J(e, t, n, l) {
   if (e && e.o) {
     if (W.has(e))
       return;
@@ -273,15 +273,15 @@ function Te(e, t, n) {
   const { fragment: l, after_update: s } = e.$$;
   l && l.m(t, n), fe(() => {
     const d = e.$$.on_mount.map(ye).filter(ke);
-    e.$$.on_destroy ? e.$$.on_destroy.push(...d) : M(d), e.$$.on_mount = [];
+    e.$$.on_destroy ? e.$$.on_destroy.push(...d) : q(d), e.$$.on_mount = [];
   }), s.forEach(fe);
 }
 function we(e, t) {
   const n = e.$$;
-  n.fragment !== null && (Me(n.after_update), M(n.on_destroy), n.fragment && n.fragment.d(t), n.on_destroy = n.fragment = null, n.ctx = []);
+  n.fragment !== null && (qe(n.after_update), q(n.on_destroy), n.fragment && n.fragment.d(t), n.on_destroy = n.fragment = null, n.ctx = []);
 }
 function He(e, t) {
-  e.$$.dirty[0] === -1 && (U.push(e), qe(), e.$$.dirty.fill(0)), e.$$.dirty[t / 31 | 0] |= 1 << t % 31;
+  e.$$.dirty[0] === -1 && (U.push(e), De(), e.$$.dirty.fill(0)), e.$$.dirty[t / 31 | 0] |= 1 << t % 31;
 }
 function Be(e, t, n, l, s, d, a, o = [-1]) {
   const g = H;
@@ -312,7 +312,7 @@ function Be(e, t, n, l, s, d, a, o = [-1]) {
   if (f.ctx = n ? n(e, t.props || {}, (r, c, ...A) => {
     const b = A.length ? A[0] : c;
     return f.ctx && s(f.ctx[r], f.ctx[r] = b) && (!f.skip_bound && f.bound[r] && f.bound[r](b), _ && He(e, r)), c;
-  }) : [], f.update(), _ = !0, M(f.before_update), f.fragment = l ? l(f.ctx) : !1, t.target) {
+  }) : [], f.update(), _ = !0, q(f.before_update), f.fragment = l ? l(f.ctx) : !1, t.target) {
     if (t.hydrate) {
       const r = ze(t.target);
       f.fragment && f.fragment.l(r), r.forEach(z);
@@ -375,7 +375,7 @@ function Ze(e) {
   let t;
   return {
     c() {
-      t = J(
+      t = M(
         /*labelText*/
         e[5]
       );
@@ -400,7 +400,7 @@ function $e(e) {
   let t;
   return {
     c() {
-      t = J(
+      t = M(
         /*labelA*/
         e[3]
       );
@@ -425,7 +425,7 @@ function et(e) {
   let t;
   return {
     c() {
-      t = J(
+      t = M(
         /*labelB*/
         e[4]
       );
@@ -697,10 +697,10 @@ function tt(e) {
       c || (j(h, u), j(k, u), j(v, u), c = !0);
     },
     o(u) {
-      D(h, u), D(k, u), D(v, u), c = !1;
+      J(h, u), J(k, u), J(v, u), c = !1;
     },
     d(u) {
-      u && z(t), h && h.d(u), k && k.d(u), v && v.d(u), A = !1, M(b);
+      u && z(t), h && h.d(u), k && k.d(u), v && v.d(u), A = !1, q(b);
     }
   };
 }
@@ -819,7 +819,7 @@ function be(e) {
     e[3].isAdmin !== void 0 && (B.toggled = /*employee*/
     e[3].isAdmin), r = new it({ props: B }), ie.push(() => xe(r, "toggled", L)), {
       c() {
-        t = y("li"), n = y("div"), l = y("h4"), d = J(s), a = P(), o = y("p"), f = J(g), _ = P(), Ge(r.$$.fragment), A = P(), p(t, "class", "svelte-6fbsmq");
+        t = y("li"), n = y("div"), l = y("h4"), d = M(s), a = P(), o = y("p"), f = M(g), _ = P(), Ge(r.$$.fragment), A = P(), p(t, "class", "svelte-2k5rl");
       },
       m(h, E) {
         F(h, t, E), m(t, n), m(n, l), m(l, d), m(n, a), m(n, o), m(o, f), m(t, _), Te(r, t, null), m(t, A), b = !0;
@@ -833,13 +833,13 @@ function be(e) {
         const O = {};
         !c && E & /*employees*/
         1 && (c = !0, O.toggled = /*employee*/
-        e[3].isAdmin, De(() => c = !1)), r.$set(O);
+        e[3].isAdmin, Je(() => c = !1)), r.$set(O);
       },
       i(h) {
         b || (j(r.$$.fragment, h), b = !0);
       },
       o(h) {
-        D(r.$$.fragment, h), b = !1;
+        J(r.$$.fragment, h), b = !1;
       },
       d(h) {
         h && z(t), we(r);
@@ -854,7 +854,7 @@ function ot(e) {
   ), o = [];
   for (let f = 0; f < a.length; f += 1)
     o[f] = be(me(e, a, f));
-  const g = (f) => D(o[f], 1, 1, () => {
+  const g = (f) => J(o[f], 1, 1, () => {
     o[f] = null;
   });
   return {
@@ -862,7 +862,7 @@ function ot(e) {
       t = y("main"), n = y("h1"), n.textContent = "Employees", l = P(), s = y("ul");
       for (let f = 0; f < o.length; f += 1)
         o[f].c();
-      p(s, "class", "svelte-6fbsmq");
+      p(s, "class", "svelte-2k5rl");
     },
     m(f, _) {
       F(f, t, _), m(t, n), m(t, l), m(t, s);
@@ -897,7 +897,7 @@ function ot(e) {
     o(f) {
       o = o.filter(Boolean);
       for (let _ = 0; _ < o.length; _ += 1)
-        D(o[_]);
+        J(o[_]);
       d = !1;
     },
     d(f) {
