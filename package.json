@@ -9,7 +9,7 @@
     "build:watch": "vite build --watch",
     "preview": "concurrently 'npm:build:watch' 'npm:_preview'",
     "_preview": "vite preview",
-    "pages": "gh-pages -d dist",
+    "pages": "gh-pages --dist dist --dotfiles",
     "deploy": "npm run build && npm run pages"
   },
   "devDependencies": {
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "carbon-components-svelte": "^0.79.0",
+    "carbon-icons-svelte": "^12.1.0",
     "gh-pages": "^5.0.0",
     "vite-plugin-css-injected-by-js": "^3.2.1"
   }

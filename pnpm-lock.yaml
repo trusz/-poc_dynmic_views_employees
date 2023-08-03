@@ -8,6 +8,9 @@ dependencies:
   carbon-components-svelte:
     specifier: ^0.79.0
     version: 0.79.0
+  carbon-icons-svelte:
+    specifier: ^12.1.0
+    version: 12.1.0
   gh-pages:
     specifier: ^5.0.0
     version: 5.0.0
@@ -357,6 +360,10 @@ packages:
     resolution: {integrity: sha512-xq9XgfcHIfbKUtAI7s1HDdkFKuP7PyNHfr14d2Xzx072DJw3DNnMBe0xmQE6z9M5tKTRaJziUVMYprzBI+Y1SQ==}
     dependencies:
       flatpickr: 4.6.9
+    dev: false
+
+  /carbon-icons-svelte@12.1.0:
+    resolution: {integrity: sha512-RPU+W/AhkdPRqHMaShOdFluQZXMT6PNYrqEwPxDBvmrX2ioOYhZo1J508e0WeVX69iOqyUv6KjxrdbsoDdogeg==}
     dev: false
 
   /chalk@4.1.2:

@@ -2,10 +2,20 @@ import './app.css'
 import App from './app.svelte'
 
 
-function init(){
+/**
+ * @param {string} appBase 
+ * @param {string} viewBase 
+ * @param {string[]} routeChunks 
+ */
+function init(appBase, viewBase, routeChunks){
     
     new App({
         target: document.getElementById('view-root'),
+        props: {
+            appBase,
+            viewBase,
+            routeChunks,
+        }
     })
     
     const stylePath = "./style.css"
@@ -14,14 +24,6 @@ function init(){
     
     // import(styleUrl.href)
     
-    
-    console.log({
-        level:"dev", 
-        message:"app.js loaded", 
-        url: import.meta.url,
-        origin: new URL(import.meta.url).origin,
-        appKeys: Object.keys(App)
-    })
 }
 
 export default init

@@ -1,73 +1,33 @@
 <script>
-    import { Toggle } from "carbon-components-svelte";
+    import EmployeeList from "./lib/employee-list.svelte";
+    import Employee from "./lib/employee.svelte";
+    import { appBase$, viewBase$ } from "./lib/route-store"
     
-    /**
-     * @typedef {Object} Employee
-     * @property {string} name
-     * @property {boolean=} isAdmin
-     */
-
-    /** @type {Employee[]} */
-    let employees = []
-
-    function init(){
-        const empJSON = window.localStorage.getItem("employees");
-        if(!empJSON){ return }
-        employees = JSON.parse(empJSON);
-
-        console.log({level:"dev", message:"employees", employees})
-    }
-
-    /**
-     * 
-     * @param {Employee[]} employees
-     */
-    function updateEmployees(employees){
-        window.localStorage.setItem("employees", JSON.stringify(employees));
-    }
-    $: updateEmployees(employees)
+    /** @type {string} */
+    export let appBase = ""
+    /** @type {string} */
+    export let viewBase = ""
+    /** @type {string[]} */
+    export let routeChunks = [] 
     
-    init();
+    
+    $:console.log({level:"dev", message:"app", appBase, viewBase, routeChunks, })
+
+    $: appBase$.set(appBase)
+    $: viewBase$.set(viewBase)
+
+    $: employeeId = routeChunks[0]
+    
 </script>
 
 <main>
-    <h1>Employees</h1>
-    
-    <ul>
-        {#each employees as employee}
-            <li>
-                <div>
-                    <h4>{employee.name}</h4>
-                    <p>{employee.isAdmin ? "Admin" : "Employee"}</p>
-                </div>
-                <Toggle labelText="Is Admin" bind:toggled={employee.isAdmin} />
-            </li>
-        {/each}
-    </ul>
-    
+    {#if employeeId}
+        <Employee employeeId={employeeId} />
+    {:else}
+        <EmployeeList />
+    {/if}
 </main>
 
 <style>
-
-    ul{
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        padding: 0;
-        margin: 0;
-    }
-
-    li{
-        display: flex;
-        width: 15rem;
-        height: 12rem;
-        padding: 1rem;
-        background-color: #393939;
-        outline: 2px solid rgba(0,0,0,0);
-        outline-offset: -2px;
-        gap:2rem;
-        flex-direction: column;
-    }
     
 </style>
