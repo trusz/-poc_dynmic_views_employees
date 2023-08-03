@@ -11,8 +11,6 @@
     export let routeChunks = [] 
     
     
-    $:console.log({level:"dev", message:"app", appBase, viewBase, routeChunks, })
-
     $: appBase$.set(appBase)
     $: viewBase$.set(viewBase)
 
